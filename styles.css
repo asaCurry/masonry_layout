@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+:root {
+  --gd-width: 200px;
+  --gd-height: 80px;
+
+  --black: #333B42;
+  --blue:#198297;
+  --yellow: #ebab18;
+}
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+body{
+  background-color: #ededea;
+}
+/* filter */
+
+.filter-container {
+  text-align: center;
+  padding-top: 48px;
+}
+.filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+}
+.filter-button {
+  padding: 6px 36px;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,0);
+}
+.active {
+  border: 1px solid black;
+}
+.filtered {
+  display: none !important;
+}
+/* grid */
+.grid {
+  height: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid black;
+}
+.grid-item {
+  background-color: rgba(0,0,0,0);
+  width: 200px;
+  height: 150px;
+  margin: 5px 0;
+  transition: all .3s ease;
+  z-index: 1;
+  overflow: hidden;
+}
+.grid-item:hover {
+  box-shadow: 2px 2px 4px 2px rgba(150,150,150,.8);
+}
+.gd-sm {
+  height: var(--gd-height);
+}
+.gd-md {
+  height: calc(var(--gd-height) * 2 + 10px);
+}
+
+.gd-lg {
+  width: calc(var(--gd-width) * 2 + 10px);
+  height: calc(var(--gd-height) * 2 + 10px);
+}
+.copy {
+  opacity: 0;
+  transition: all .5s ease;
+  padding: 24px;
+  display: inline-block;
+}
+.expanded {
+  width: calc(var(--gd-width) * 2 + 10px);
+  height: calc(var(--gd-height) * 4 + 10px);
+  z-index: 5;
+  position: relative;
+}
+.close {
+  display: none;
+}
+.expanded > .close {
+  display: block;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: #ffffff;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.expanded > .copy {
+  opacity: 1;
+  color: #ffffff;
+}
+/* cosmetic */
+
+.black {background-color: var(--black);}
+.blue {background-color: var(--blue);}
+.yellow {background-color: var(--yellow);}
